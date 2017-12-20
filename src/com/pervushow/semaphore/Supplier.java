@@ -10,7 +10,7 @@ public class Supplier {
         Thread gunAdd = new Thread(new Runnable() {
             @Override
             public void run() {
-                synchronized (GunWarehouse.class) {
+                synchronized (gunWarehouse) {
                     for (int i = 0; i < guns; i++) {
                         gunWarehouse.add();
                     }
@@ -22,7 +22,7 @@ public class Supplier {
         Thread knifeAdd = new Thread(new Runnable() {
             @Override
             public void run() {
-                synchronized (KnifeWarehouse.class) {
+                synchronized (knifeWarehouse) {
                     for (int i = 0; i < knifes; i++) {
                         knifeWarehouse.add();
                     }
@@ -34,7 +34,7 @@ public class Supplier {
         Thread bfg = new Thread(new Runnable() {
             @Override
             public void run() {
-                synchronized (BFGWarehouse.class) {
+                synchronized (bfgWarehouse) {
                     for (int i = 0; i < bfgs; i++) {
                         bfgWarehouse.add();
                     }
